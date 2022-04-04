@@ -12,7 +12,7 @@ public class RFID {
         int len = SerialPort.getCommPorts().length;
         String arduinoPortDescriptiveName = "USB-SERIAL CH340";
         SerialPort arduinoPort = null;
-        SerialPort[] serialPorts = new SerialPort[len];
+        SerialPort[] serialPorts;
 
         serialPorts = SerialPort.getCommPorts();
 
@@ -24,7 +24,6 @@ public class RFID {
                 System.out.println("connected to: " + arduinoPort.getDescriptivePortName());
             }
         }
-
         PackageListener listener = new PackageListener();
         arduinoPort.addDataListener(listener);
 

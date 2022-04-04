@@ -19,7 +19,7 @@ public class PackageListener implements SerialPortPacketListener {
 
     @Override
     public int getListeningEvents() {
-        return SerialPort.LISTENING_EVENT_DATA_RECEIVED; //_AVAILABLE
+        return SerialPort.LISTENING_EVENT_DATA_RECEIVED;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class PackageListener implements SerialPortPacketListener {
             Logger.getLogger(PackageListener.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (byteSize == getPacketSize()) {
-            System.out.println("(Received data of size: " + "("+ byteSize + ")");
+            System.out.println("Received data of size: " + "("+ byteSize + ")");
             System.out.println("Received data: " + UidString);
         }
     }
